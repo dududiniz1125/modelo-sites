@@ -59,6 +59,8 @@ export function Marquee({
         .map((_, i) => (
           <div
             key={i}
+            // As cópias só existem para o loop visual; o leitor de tela lê o conteúdo uma vez.
+            aria-hidden={i > 0 || undefined}
             className={cn("flex shrink-0 justify-around gap-(--gap)", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,

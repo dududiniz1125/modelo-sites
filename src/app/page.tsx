@@ -1,6 +1,7 @@
 import { ClockIcon, MapPinIcon, NavigationIcon, PhoneIcon } from "lucide-react"
 
 import { enderecoCompleto, linkWhatsApp, site } from "@/config/site"
+import { Depoimentos } from "@/components/depoimentos"
 import { SiteHeader } from "@/components/site-header"
 import { SiteMap, linkRotas } from "@/components/site-map"
 import { WhatsAppIcon } from "@/components/whatsapp-icon"
@@ -14,7 +15,6 @@ import {
 } from "@/components/ui/accordion"
 import { BlurFade } from "@/components/magicui/blur-fade"
 import { DotPattern } from "@/components/magicui/dot-pattern"
-import { Marquee } from "@/components/magicui/marquee"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -79,17 +79,8 @@ export default function Home() {
           <h2 className="mx-auto max-w-6xl px-4 text-3xl font-semibold md:text-4xl">
             O que nossos clientes dizem
           </h2>
-          <div className="relative mt-8">
-            <Marquee pauseOnHover className="[--duration:40s]">
-              {site.depoimentos.map((d) => (
-                <figure key={d.nome} className="w-72 rounded-xl border bg-card p-5">
-                  <blockquote className="text-pretty">“{d.texto}”</blockquote>
-                  <figcaption className="mt-3 text-sm text-muted-foreground">{d.nome}</figcaption>
-                </figure>
-              ))}
-            </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background" />
+          <div className="mt-8">
+            <Depoimentos />
           </div>
         </section>
 
@@ -152,7 +143,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t pb-24 md:pb-0">
+      <footer className="border-t">
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted-foreground">
           © <span translate="no">{site.nome}</span>. Todos os direitos reservados.
         </div>

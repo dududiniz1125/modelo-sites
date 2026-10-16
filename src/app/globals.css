@@ -80,7 +80,7 @@
   --border: oklch(0.91 0.01 155);
   --input: oklch(0.91 0.01 155);
   --ring: oklch(0.42 0.09 155);
-  --whatsapp: #25d366;
+  --whatsapp: #127c45; /* verde WhatsApp escurecido: contraste 5,3:1 com texto branco */
 }
 
 .dark {

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Fraunces } from "next/font/google"
 
 import { site } from "@/config/site"
+import { MotionProvider } from "@/components/motion-provider"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import "./globals.css"
 
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <WhatsAppButton />
       </body>
     </html>
